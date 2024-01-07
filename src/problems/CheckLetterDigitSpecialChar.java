@@ -1,4 +1,4 @@
-package Problems;
+package problems;
 
 import java.util.Scanner;
 
