@@ -1,4 +1,4 @@
-package problems;
+package problems.Easy;
 
 public class AddDigits {
 
