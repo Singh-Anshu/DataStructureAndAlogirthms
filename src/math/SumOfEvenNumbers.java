@@ -1,4 +1,4 @@
-package problems.Easy;
+package math;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package problems.Easy;
+package math;
 
 public class AddDigits {
 
@@ -7,7 +7,7 @@ public class AddDigits {
      */
 
     public static void main(String[] args) {
-        System.out.println(addDigits(95));
+        System.out.println(addDigits(77));
     }
 
     public static int addDigits(int num) {

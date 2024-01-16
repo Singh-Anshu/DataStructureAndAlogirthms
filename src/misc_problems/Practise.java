@@ -1,4 +1,4 @@
-package problems;
+package misc_problems;
 import java.util.ArrayList;
 import java.util.HashSet;
 
