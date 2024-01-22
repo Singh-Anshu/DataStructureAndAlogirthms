@@ -2,7 +2,7 @@ package array;
 
 import java.util.Scanner;
 
-public class multidimensional_array_userinput {
+public class MultidimensionalArrayUserInput {
 
     public static void main(String[] args)
     {
