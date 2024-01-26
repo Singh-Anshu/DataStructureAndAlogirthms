@@ -14,23 +14,23 @@ public class DuplicateChar {
         duplicateChar(input);
     }
 
-    private static void duplicateChar(String s){
+    private static void duplicateChar(String s) {
         Map<Character, Integer> map = new HashMap<>();
         char[] charArray = s.toCharArray();
 
-        for(char c: charArray){
+        for (char c : charArray) {
 
-            if(map.containsKey(c)){
-                map.put(c, map.get(c)+1);
-            }else{
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
                 map.put(c, 1);
             }
         }
 
-        for (Map.Entry<Character, Integer> e: map.entrySet()){
+        for (Map.Entry<Character, Integer> e : map.entrySet()) {
             //Printing duplicate Value
-            if(e.getValue() > 1){
-                System.out.println(e.getKey() +" "+ e.getValue());
+            if (e.getValue() > 1) {
+                System.out.println(e.getKey() + " " + e.getValue());
             }
         }
     }
