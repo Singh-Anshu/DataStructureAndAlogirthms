@@ -16,7 +16,7 @@ public class FindElementAppearsOnceInArray {
     Output: 2
      */
     public static void main(String[] args) {
-        int[] input = {2, 3, 5, 4, 5, 3, 4,7,9};
+        int[] input = {2, 3, 5, 4, 5, 3, 4,};
 
         int result = input[0] ;
         for(int i=1; i <input.length; i++){
