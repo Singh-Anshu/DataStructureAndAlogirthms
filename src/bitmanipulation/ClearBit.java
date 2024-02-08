@@ -1,4 +1,4 @@
-package BitManiPulation;
+package bitmanipulation;
 
 public class ClearBit {
 

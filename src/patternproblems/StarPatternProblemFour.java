@@ -1,6 +1,5 @@
-package patternProblems;
+package patternproblems;
 
-import java.io.OutputStream;
 import java.util.Scanner;
 
 public class StarPatternProblemFour {

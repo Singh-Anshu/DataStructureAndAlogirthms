@@ -1,4 +1,4 @@
-package StringsProblems;
+package strings_problems;
 
 public class LongestPalindromicSubstring {
 

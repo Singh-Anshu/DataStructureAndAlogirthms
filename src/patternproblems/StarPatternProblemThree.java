@@ -1,4 +1,4 @@
-package patternProblems;
+package patternproblems;
 
 import java.util.Scanner;
 
