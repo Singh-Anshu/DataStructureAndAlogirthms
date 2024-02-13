@@ -1,4 +1,4 @@
-package patternproblems;
+package patternproblems.star_patterns;
 
 import java.util.Scanner;
 
