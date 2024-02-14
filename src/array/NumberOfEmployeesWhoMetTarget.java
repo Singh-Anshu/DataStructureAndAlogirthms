@@ -15,8 +15,8 @@ public class NumberOfEmployeesWhoMetTarget {
     */
 
     public static void main(String[] args) {
-        int hours[] = {5,1,4,2,2};
-        int target= 6;
+        int[] hours = {5,1,4,2,2};
+        int target= 1;
         System.out.println(numberOfEmployeesWhoMetTarget(hours, target ));
     }
 
