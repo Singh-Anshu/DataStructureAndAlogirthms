@@ -1,4 +1,4 @@
-package array;
+package array.matrix;
 
 public class multi_dimensional_array {
 
