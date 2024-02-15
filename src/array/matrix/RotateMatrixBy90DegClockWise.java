@@ -1,15 +1,10 @@
 package array.matrix;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class TransposeOfMatrix {
+public class RotateMatrixBy90DegClockWise {
 
     public static void main(String[] args) {
-    /*
-        int[][] array = {{1, 2, 3},
-                         {4, 5, 6},
-                         {7, 8, 9}};*/
 
         System.out.println("Enter row of matrix");
         Scanner sc = new Scanner(System.in);
@@ -22,39 +17,34 @@ public class TransposeOfMatrix {
         for (int i = 0; i < r;  i++) {
 
             for (int j = 0; j < c;  j++) {
-
                 matrix[i][j]= sc.nextInt();
             }
-
         }
 
         System.out.println("Printing value of matrix");
         printMatrix(matrix);
         System.out.println("Printing Transpose matrix");
-       int[][] ans = printTransposeMatrix(matrix, r, c);
-       printMatrix(ans);
-
-       sc.close();
-
+        int[][] ans =  rotateMatrixBy90Degree(matrix, r, c);
+        printMatrix(ans);
 
     }
 
-    private static int[][] printTransposeMatrix(int[][] array, int r, int c) {
+    private static int[][] rotateMatrixBy90Degree(int[][] matrix, int r, int c) {
+
         int[][] transpose = new int[c][r];
 
-        for (int i = 0; i < c;  i++) {
+        for (int i = 0; i < r; i++) {
 
-            for (int j = i; j < r; j++) {
+            for (int j = i; j < c; j++) {
 
-               // transpose[i][j] = array[j][i];
-                int temp = array[i][j];
-                array[i][j] = array[j][i];
-                array[j][i] = temp;
+                transpose[c - j - 2][i] = matrix[i][j];
+
+
             }
 
         }
 
-        return array;
+        return transpose;
     }
 
     private static void printMatrix(int[][] array) {
