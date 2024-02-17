@@ -45,6 +45,7 @@ public class KeyPairArray {
             int req_num = x - arr[i];
             if(req_num >= 1 && req_num <= 100000 && found[req_num])
                 return true;
+
             found[arr[i]] = true;
         }
         return false;
