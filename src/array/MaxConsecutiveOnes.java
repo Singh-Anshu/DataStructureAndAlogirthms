@@ -42,6 +42,7 @@ public class MaxConsecutiveOnes {
             ans[i + len] = nums[i];
         }
 
+        System.gc();
         return ans;
 
     }
