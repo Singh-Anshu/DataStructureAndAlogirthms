@@ -36,11 +36,22 @@ public class Pow {
         sc.close();
     }
 
+    public static double myPowHelper(double x, int n) {
+        if (n == 0)
+            return 1.0;
+        double partial_ans = myPowHelper(x, n / 2);
+        if (n % 2 == 0) {
+            return partial_ans * partial_ans;
+        } else {
+            return partial_ans * partial_ans * x;
+        }
+    }
+
     public static double myPow(double x, int n) {
-
-        if(n == 0)
-            return 1;
-        return  x * myPow(x, n-1);
-
+        if (n < 0) {
+            return 1 / myPowHelper(x, Math.abs(n));
+        } else {
+            return  myPowHelper(x, n);
+        }
     }
 }
