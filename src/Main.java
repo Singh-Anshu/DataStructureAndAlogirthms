@@ -11,7 +11,6 @@ public class Main {
             System.out.println(i +"\t-->\t"+ (char)i);
         }*/
         String s = "Anshu";
-        System.out.println(s.substring(0,2));
 
     }
 }
