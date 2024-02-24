@@ -11,12 +11,12 @@ public class CharacterFrequency {
         data = data.toLowerCase();
         char[] arr = data.toCharArray();
 
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
-        for(char c : arr){
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : arr) {
 
-            if(Character.isLetter(c)){
+            if (Character.isLetter(c)) {
 
-                map.put(c, map.getOrDefault(c,0)+1);
+                map.put(c, map.getOrDefault(c, 0) + 1);
             }
         }
 
