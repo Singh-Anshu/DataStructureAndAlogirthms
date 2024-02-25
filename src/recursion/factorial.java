@@ -4,7 +4,7 @@ public class factorial {
 
     public static void main(String[] args) {
 
-        System.out.println(findFactorial(5));
+        System.out.println(findFactorial(4));
     }
 
     private static int findFactorial(int num){
