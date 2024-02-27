@@ -11,6 +11,7 @@ public class FindFibonacci {
 
     public static void main(String[] args) {
 
+        System.out.println("Enter value to get fibonacci sum");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(fibo(n));
@@ -18,14 +19,11 @@ public class FindFibonacci {
         sc.close();
     }
 
-    private static int fibo(int n){
+    private static int fibo(int n) {
 
-        if(n == 0 || n ==1)
+        if (n <= 1)
             return n;
-        int a = fibo(n-1);
-        int b = fibo(n-2);
-        System.out.println("a :"+ a + " b :"+ b);
 
-        return a+b ;
+        return fibo(n - 1) + fibo(n - 2);
     }
 }
