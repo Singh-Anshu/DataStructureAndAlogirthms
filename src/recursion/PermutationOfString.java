@@ -15,9 +15,9 @@ public class PermutationOfString {
         }
 
         for(int i=0; i <str.length(); i++){
-             char currchar = str.charAt(i);
+             char currChar = str.charAt(i);
              String newStr = str.substring(0,i)+ str.substring(i+1);
-             printPerm(newStr, permutation+currchar);
+             printPerm(newStr, permutation+currChar);
         }
     }
 }
