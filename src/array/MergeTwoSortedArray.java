@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class MergeTwoSortedArray {
     public static void main(String[] args) {
-        int[] arr1 = {1,3,7, 9, 10};
-        int[] arr2 = {20,40,50, 60, 70 };
+        int[] arr1 = {1,3,7, 9, 10,45,75,100};
+        int[] arr2 = {20,40,50, 60, 70 ,85,90};
 
         System.out.println(Arrays.toString(mergedTwoSortedArrays(arr1, arr2, arr1.length, arr2.length)));
 
