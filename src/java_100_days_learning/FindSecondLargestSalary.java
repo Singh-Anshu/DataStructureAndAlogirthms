@@ -8,22 +8,32 @@ public class FindSecondLargestSalary {
 
     public static void main(String[] args) {
 
-        String [] sar = {"50,000", "50,000", "67,000", "35,000", "70,000"};
+        int[] sar = {50000, 50000, 67000, 35000, 70000,98000};
 
-        //System.out.println(findSecondLargestSalary(sar));
-        System.out.println(Arrays.stream(sar).distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst());
+        String [] salary = {"50,000", "50,000", "67,000", "35,000", "70,000"};
+
+        System.out.println(findSecondLargestSalary(sar));  //T.C = O(n)
+        System.out.println(Arrays.stream(salary).distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst());
     }
 
-   /* private static String findSecondLargestSalary(String[] salary){
+    // Second Method of finding second largest salary
 
-        String firstSalary = salary[0];
-        String secondSalary = firstSalary;
+    private static int findSecondLargestSalary(int[] salary){
 
-        for(int i=0; i < salary.length; i++){
+        int largestSalary = 0;
+        int secondLargestSalary = 0;
 
-            if(firstSalary.replace(",", ".") <= salary[i]){
+        for(int currentSalaries: salary){
 
+            if(currentSalaries > largestSalary){
+                secondLargestSalary = largestSalary;
+                largestSalary = currentSalaries;
+
+            }else if(currentSalaries > secondLargestSalary && currentSalaries != largestSalary){
+                secondLargestSalary = currentSalaries;
             }
         }
-    }*/
+
+       return  secondLargestSalary;
+    }
 }
