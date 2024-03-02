@@ -3,7 +3,7 @@ package java_100_days_learning;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class FindSecondLargestSalary {
+public class FindSecondLargestSalary { 
 
 
     public static void main(String[] args) {
