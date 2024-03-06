@@ -24,7 +24,7 @@ public class BinarySearch {
 
         int li = 0;
         int hi = arr.length - 1;
-        int mi = (li + hi) / 2;
+        int mi = li + (hi - li) / 2;
 
         while (li <= hi) {
 
@@ -40,7 +40,7 @@ public class BinarySearch {
 
             }
 
-            mi = (li + hi) / 2;
+            mi = li + (hi - li) / 2;
 
         }
     }
