@@ -6,13 +6,14 @@ public class LL {
     private int size;
 
 
-    static class Node {
+     class Node {
         String data;
         Node next;
 
         Node(String data) {
             this.data = data;
             this.next = null;
+            size++;
         }
 
     }
@@ -62,6 +63,11 @@ public class LL {
         System.out.println("null");
     }
 
+    public int getSize() {
+        return size;
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -71,5 +77,6 @@ public class LL {
         list.addFirst("a");
 
         list.printList();
+        System.out.println("Size: "+list.getSize());
     }
 }
