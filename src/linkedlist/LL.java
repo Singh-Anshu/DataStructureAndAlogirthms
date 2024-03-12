@@ -3,8 +3,7 @@ package linkedlist;
 public class LL {
 
     Node head;
-    private int size;
-
+    private int length;
 
      class Node {
         String data;
@@ -13,7 +12,7 @@ public class LL {
         Node(String data) {
             this.data = data;
             this.next = null;
-            size++;
+            length++;
         }
 
     }
@@ -30,6 +29,33 @@ public class LL {
         head = newNode;
     }
 
+    public void addElement(String data) {
+        Node newNode = new Node(data);
+
+        Node currNode = head;
+        while (currNode.next != null) {
+            currNode = currNode.next;
+        }
+
+        currNode.next = newNode;
+        newNode.next = null;
+    }
+
+    public void addAtIndex(int index, String data) {
+
+         if(index > getSize() || index == 0){
+             System.out.println("index is not valid");
+             return;
+         }
+
+         for(int i=0; i < getSize(); i++){
+
+             if(index == i){
+
+             }
+         }
+    }
+
     public void addLast(String data) {
         Node newNode = new Node(data);
 
@@ -44,6 +70,7 @@ public class LL {
         }
 
         currNode.next = newNode;
+
     }
 
     public void printList() {
@@ -63,18 +90,46 @@ public class LL {
         System.out.println("null");
     }
 
-    public int getSize() {
-        return size;
+    public void removeElement(String data){
+
+         // 1 -> 2 -> 3 -> 4 -> null
+        Node currNode = head, prev = null;
+
+        if(currNode != null && currNode.data.equalsIgnoreCase(data)){
+            head = currNode.next;
+            return;
+        }
+
+
+        while (currNode != null && !currNode.data.equalsIgnoreCase(data)) {
+
+            prev = currNode;
+            currNode = currNode.next;
+        }
+
+        if (currNode == null)
+            return;
+
+        prev.next = currNode.next;
+
     }
 
+    public int getSize() {
+        return length;
+    }
 
 
     public static void main(String[] args) {
 
         LL list = new LL();
-        list.addFirst("b");
-        list.addLast("z");
+
         list.addFirst("a");
+        list.addElement("b");
+        list.addElement("c");
+        list.addElement("d");
+        list.addElement("e");
+        list.addLast("z");
+        list.removeElement("b");
 
         list.printList();
         System.out.println("Size: "+list.getSize());
