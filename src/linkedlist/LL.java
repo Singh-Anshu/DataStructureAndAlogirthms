@@ -5,7 +5,7 @@ public class LL {
     Node head;
     private int length;
 
-     class Node {
+    private class Node {
         String data;
         Node next;
 
@@ -43,17 +43,29 @@ public class LL {
 
     public void addAtIndex(int index, String data) {
 
-         if(index > getSize() || index == 0){
-             System.out.println("index is not valid");
-             return;
-         }
+        // 1 -> 2 -> 3 -> null
+        if (index > getSize() || index == 0) {
+            System.out.println("index is not valid");
+            return;
+        }
 
-         for(int i=0; i < getSize(); i++){
+        Node newNode = new Node(data);
 
-             if(index == i){
+        Node currNode = head, nextNode = null;
 
-             }
-         }
+        for (int i = 1; i <= getSize(); i++) {
+
+            if (i == index-1) {
+
+                newNode.next = nextNode;
+                currNode.next = newNode;
+
+                length++;
+                return;
+            }
+            currNode = currNode.next;
+            nextNode = currNode.next;
+        }
     }
 
     public void addLast(String data) {
@@ -90,16 +102,17 @@ public class LL {
         System.out.println("null");
     }
 
-    public void removeElement(String data){
+    public void deleteElement(String data) {
 
-         // 1 -> 2 -> 3 -> 4 -> null
+        // 1 -> 2 -> 3 -> 4 -> null
         Node currNode = head, prev = null;
 
-        if(currNode != null && currNode.data.equalsIgnoreCase(data)){
+        // if we found data in head
+        if (currNode != null && currNode.data.equalsIgnoreCase(data)) {
             head = currNode.next;
+            length--;
             return;
         }
-
 
         while (currNode != null && !currNode.data.equalsIgnoreCase(data)) {
 
@@ -111,7 +124,40 @@ public class LL {
             return;
 
         prev.next = currNode.next;
+        length--;
 
+    }
+
+    public void deleteFirst() {
+
+        if (head == null) {
+            System.out.println("Linked list is Empty");
+            return;
+        }
+
+        head = head.next;
+        length--;
+    }
+
+
+    public void deleteLast() {
+
+        if (head == null) {
+            System.out.println("Linked list is Empty");
+            return;
+        }
+
+        Node secondLatNode = head;
+
+        for (int i = 1; i <= getSize(); i++) {
+
+            if (i == getSize() - 1) {
+                secondLatNode.next = null;
+                length--;
+                return;
+            }
+            secondLatNode = secondLatNode.next;
+        }
     }
 
     public int getSize() {
@@ -129,9 +175,12 @@ public class LL {
         list.addElement("d");
         list.addElement("e");
         list.addLast("z");
-        list.removeElement("b");
+        list.addAtIndex(3, "f");
+        //list.deleteFirst();
+        //list.deleteLast();
+        // list.deleteElement("b");
 
         list.printList();
-        System.out.println("Size: "+list.getSize());
+        System.out.println("Size: " + list.getSize());
     }
 }
