@@ -44,8 +44,13 @@ public class LL {
     public void addAtIndex(int index, String data) {
 
         // 1 -> 2 -> 3 -> null
-        if (index > getSize() || index == 0) {
+        if (index == 0) {
             System.out.println("index is not valid");
+            return;
+        }
+
+        if(index == 1){
+            addFirst(data);
             return;
         }
 
@@ -55,12 +60,10 @@ public class LL {
 
         for (int i = 1; i <= getSize(); i++) {
 
-            if (i == index-1) {
+            if (i == index - 1) {
 
                 newNode.next = nextNode;
                 currNode.next = newNode;
-
-                length++;
                 return;
             }
             currNode = currNode.next;
@@ -69,13 +72,14 @@ public class LL {
     }
 
     public void addLast(String data) {
-        Node newNode = new Node(data);
 
-        if (head == null) {
-            head = newNode;
+        if (getSize() == 0) {
+            addFirst(data);
+            // head = newNode;
             return;
         }
 
+        Node newNode = new Node(data);
         Node currNode = head;
         while (currNode.next != null) {
             currNode = currNode.next;
@@ -160,8 +164,46 @@ public class LL {
         }
     }
 
+    private void deleteAtIndex(int index) {
+
+        // 1 -> 2 -> 3 -> 4
+        if(index <= 0 || index > getSize()){
+            System.out.println("Index is not valid!");
+            return;
+        }
+
+        if( index == 1){
+            deleteFirst();
+            return;
+        }
+
+        Node currNode = head;
+        for(int i=1; i < index-1; i++){
+            currNode = currNode.next;
+
+        }
+
+        currNode.next = currNode.next.next;
+        length--;
+
+    }
+
     public int getSize() {
         return length;
+    }
+
+    public String get(int index) {
+
+        // 1 -> 2 -> 3 -> 4
+        if (index < 0 || index > getSize())
+            return  "Index Invalid!";
+
+        Node currNode = head;
+        for (int i = 1; i < index; i++) {
+            currNode = currNode.next;
+        }
+
+        return currNode.data;
     }
 
 
@@ -169,18 +211,26 @@ public class LL {
 
         LL list = new LL();
 
-        list.addFirst("a");
-        list.addElement("b");
-        list.addElement("c");
-        list.addElement("d");
-        list.addElement("e");
-        list.addLast("z");
-        list.addAtIndex(3, "f");
-        //list.deleteFirst();
-        //list.deleteLast();
-        // list.deleteElement("b");
-
+        list.addFirst("1");
+        //list.addElement("b");
+       // list.addElement("c");
+       // list.addElement("d");
+      //  list.addElement("e");
+        list.addLast("3");
+        list.addAtIndex(1, "2");
+     //   list.deleteFirst();
+     //   list.deleteLast();
+      //  list.deleteElement("b");
         list.printList();
         System.out.println("Size: " + list.getSize());
+        System.out.println("get value by index: "+ list.get(1));
+        list.deleteAtIndex(1);
+        list.printList();
+        System.out.println("Size: " + list.getSize());
+        System.out.println("get value by index: "+ list.get(1));
+
+
     }
+
+
 }
