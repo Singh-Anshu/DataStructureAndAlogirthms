@@ -188,6 +188,39 @@ public class LL {
 
     }
 
+    public void createCircularLinkedList(){
+
+        if(head == null || head.next == null){
+            return;
+        }
+
+        Node currNode = head;
+        while (currNode.next != null){
+            currNode = currNode.next;
+        }
+
+        currNode.next = head;
+    }
+
+    public boolean checkCircularLinkedList() {
+        if(head == null || head.next == null){
+            return false;
+        }
+
+        Node currNode = head;
+
+        while (currNode.next != null){
+
+            currNode = currNode.next;
+
+            if(head == currNode.next){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public int getSize() {
         return length;
     }
@@ -228,6 +261,8 @@ public class LL {
         list.printList();
         System.out.println("Size: " + list.getSize());
         System.out.println("get value by index: "+ list.get(1));
+        list.createCircularLinkedList();
+        System.out.println("Check is LinkedList is Circular: "+ list.checkCircularLinkedList());
 
 
     }
