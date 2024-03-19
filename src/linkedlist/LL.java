@@ -225,6 +225,23 @@ public class LL {
         return length;
     }
 
+    public int getLength(){
+        if(head == null){
+            return 0;
+        }
+        int count =1;
+        Node currNode = head;
+
+
+        while(currNode.next != null){
+            count++;
+            currNode = currNode.next;
+        }
+
+        return count;
+
+    }
+
     public String get(int index) {
 
         // 1 -> 2 -> 3 -> 4
@@ -239,30 +256,53 @@ public class LL {
         return currNode.data;
     }
 
+    public String middleNode() {
+
+        if(head ==null){
+            return "Head is Empty";
+        }
+
+        int middleIndex = getLength()/2 ;
+        Node currNode = head;
+
+        for (int i =0; i <= middleIndex+1; i++){
+
+            if(i == middleIndex){
+
+                return currNode.data;
+            }
+            currNode = currNode.next;
+        }
+
+        return "something went wrong";
+    }
 
     public static void main(String[] args) {
 
         LL list = new LL();
 
         list.addFirst("1");
-        //list.addElement("b");
-       // list.addElement("c");
-       // list.addElement("d");
-      //  list.addElement("e");
-        list.addLast("3");
-        list.addAtIndex(1, "2");
+        list.addElement("2");
+        list.addElement("3");
+        list.addElement("4");
+        list.addElement("5");
+        list.addLast("6");
+      //  list.addAtIndex(1, "2");
      //   list.deleteFirst();
      //   list.deleteLast();
       //  list.deleteElement("b");
         list.printList();
         System.out.println("Size: " + list.getSize());
         System.out.println("get value by index: "+ list.get(1));
-        list.deleteAtIndex(1);
+      //  list.deleteAtIndex(1);
         list.printList();
         System.out.println("Size: " + list.getSize());
+        System.out.println("middleNode: "+ list.middleNode());
+        System.out.println("Divide: "+ 5/2);
         System.out.println("get value by index: "+ list.get(1));
-        list.createCircularLinkedList();
+     //   list.createCircularLinkedList();
         System.out.println("Check is LinkedList is Circular: "+ list.checkCircularLinkedList());
+
 
 
     }
