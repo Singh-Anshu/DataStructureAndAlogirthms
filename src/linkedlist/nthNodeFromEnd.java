@@ -28,7 +28,7 @@ public class nthNodeFromEnd {
     }
 
     // Optimized Method
-    public static Node nthNodeOptimized(Node head, int n){
+    public static Node nthNodeFromEnd(Node head, int n) {
 
         int size = getLength(head);
         if (n > size) {
@@ -37,17 +37,62 @@ public class nthNodeFromEnd {
 
         Node slow = head, fast = head;
 
-        for(int i=1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             fast = fast.next;
         }
 
-        while (fast != null){
+        while (fast != null) {
             slow = slow.next;
             fast = fast.next;
         }
 
         return slow;
 
+    }
+
+    public static Node removeNthNodeFromEnd(int pos, Node head) {
+        int size = getLength(head);
+        if (pos > size) {
+            return null;
+        }
+
+        if (pos == size) {
+            head = head.next;
+            return head;
+        }
+
+        Node slow = head, fast = head;
+
+        for (int i = 1; i <= pos; i++) {
+            fast = fast.next;
+        }
+
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        slow.next = slow.next != null ? slow.next.next : null;
+        return head;
+
+    }
+
+    public static void printList(Node head) {
+
+        if (head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+
+        Node currNode = head;
+
+        while (currNode != null) {
+            System.out.print(currNode.data + " -> ");
+            currNode = currNode.next;
+        }
+
+        System.out.println("null");
     }
 
     public static int getLength(Node head) {
@@ -83,8 +128,13 @@ public class nthNodeFromEnd {
 
         System.out.println("Size of LL is: " + getLength(a));
 
-        int lastNthnode = 1;
-        Node tempNode = nthNodeOptimized(a, lastNthnode);
-        System.out.println("Date from last " + lastNthnode + " Node is: " + tempNode.data);
+        int lastNthnode = 6;
+        Node tempNode = nthNodeFromEnd(a, lastNthnode);
+        System.out.println("Data from last " + lastNthnode + " Node in LL is: " + tempNode.data);
+        printList(a);
+        a = removeNthNodeFromEnd(6, a);
+        printList(a);
+
     }
+
 }
