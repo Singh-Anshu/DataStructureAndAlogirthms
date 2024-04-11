@@ -5,18 +5,43 @@ import java.util.Stack;
 
 public class Parenthesis2 {
 
+    /*
+    Problem Statement:
+    LeetCode -> 20. Valid Parentheses
+
+    Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
+    determine if the input string is valid.
+
+    An input string is valid if:
+    1. Open brackets must be closed by the same type of brackets.
+    2. Open brackets must be closed in the correct order.
+    3. Every close bracket has a corresponding open bracket of the same type.
+
+    Example 1:
+    Input: s = "()"
+    Output: true
+
+    Example 2:
+    Input: s = "()[]{}"
+    Output: true
+
+    Example 3:
+    Input: s = "(]"
+    Output: false
+
+     */
 
     public static boolean isValid(String str) {
         Stack<Character> s = new Stack<>();
-        for(int i = 0; i < str.length(); ++i) {
+        for (int i = 0; i < str.length(); ++i) {
             char ch = str.charAt(i);
-            if(ch == '[')
+            if (ch == '[')
                 s.push(']');
-            else if(ch == '{')
+            else if (ch == '{')
                 s.push('}');
-            else if(ch == '(')
+            else if (ch == '(')
                 s.push(')');
-            else if(s.empty() || s.peek() != ch)
+            else if (s.empty() || s.peek() != ch)
                 return false;
             else
                 s.pop();
