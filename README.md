@@ -18,4 +18,7 @@ This repository contains all the Data Structures and Algorithms concepts and the
 - [Sorting](https://github.com/Singh-Anshu/DataStructureAndAlogirthms/tree/master/src/sorting)
 - [Searching](https://github.com/Singh-Anshu/DataStructureAndAlogirthms/tree/master/src/searching)
 - [LinkedList](https://github.com/Singh-Anshu/DataStructureAndAlogirthms/tree/master/src/linkedlist)
+- [Stack](https://github.com/Singh-Anshu/DataStructureAndAlogirthms/tree/master/src/stack)
+- [Queue](https://github.com/Singh-Anshu/DataStructureAndAlogirthms/tree/master/src/queue)
+
 
