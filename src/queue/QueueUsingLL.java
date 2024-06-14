@@ -18,96 +18,94 @@ public class QueueUsingLL {
 
     }
 
+  static   class QueueLL {
+
+        class Node {
+            private int data;
+            private Node next;
+
+            public Node(int data) {
+                this.data = data;
+                next = null;
+            }
+        }
+
+        private Node front;
+        private Node rear;
+        private int size;
+
+        public QueueLL() {
+            this.front = null;
+            this.rear = null;
+            this.size = 0;
+        }
+
+
+        public boolean isEmpty() {
+            return (front == null && rear == null);
+        }
+
+        public int getSize() {
+            return size;
+        }
+
+
+        public void enqueue(int data) {
+            Node n = new Node(data);
+            if (isEmpty()) {
+                front = rear = n;
+            } else {
+                rear.next = n;
+                rear = n;
+            }
+
+            size++;
+        }
+
+        public int dequeue() {
+            if (isEmpty()) {
+                System.out.println("Queue is Empty!");
+                return -404;
+
+            } else if (front == rear) {
+
+                Node node = front;
+                front = rear = null;
+                return node.data;
+
+            } else {
+
+                Node deNode = front;
+                front = front.next;
+                deNode.next = null;
+                size--;
+                return deNode.data;
+
+            }
+
+        }
+
+        public int peek(){
+            if(isEmpty()){
+                System.out.println("Queue is Empty!");
+                return -404;
+            }
+
+            return front.data;
+        }
+
+        public void viewQueueLL(){
+            if(isEmpty()){
+                System.out.println("Queue is Empty!");
+                return;
+            }
+
+            // 1->2->3->4->5->
+            Node t = front;
+            while (t != null){
+                System.out.println(t.data+ " ");
+                t = t.next;
+            }
+        }
+    }
 }
-
-class QueueLL {
-
-    class Node {
-        private int data;
-        private Node next;
-
-        public Node(int data) {
-            this.data = data;
-            next = null;
-        }
-    }
-
-    private Node front;
-    private Node rear;
-    private int size;
-
-    public QueueLL() {
-        this.front = null;
-        this.rear = null;
-        this.size = 0;
-    }
-
-
-    public boolean isEmpty() {
-        return (front == null && rear == null);
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-
-    public void enqueue(int data) {
-        Node n = new Node(data);
-        if (isEmpty()) {
-            front = rear = n;
-        } else {
-            rear.next = n;
-            rear = n;
-        }
-
-        size++;
-    }
-
-    public int dequeue() {
-        if (isEmpty()) {
-            System.out.println("Queue is Empty!");
-            return -404;
-
-        } else if (front == rear) {
-
-            Node node = front;
-            front = rear = null;
-            return node.data;
-
-        } else {
-
-            Node deNode = front;
-            front = front.next;
-            deNode.next = null;
-            size--;
-            return deNode.data;
-
-        }
-
-    }
-
-    public int peek(){
-        if(isEmpty()){
-            System.out.println("Queue is Empty!");
-            return -404;
-        }
-
-        return front.data;
-    }
-
-    public void viewQueueLL(){
-        if(isEmpty()){
-            System.out.println("Queue is Empty!");
-            return;
-        }
-
-        // 1->2->3->4->5->
-        Node t = front;
-        while (t != null){
-            System.out.println(t.data+ " ");
-            t = t.next;
-        }
-    }
-}
-
