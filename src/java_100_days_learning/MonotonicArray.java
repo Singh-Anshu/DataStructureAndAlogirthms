@@ -5,9 +5,9 @@ public class MonotonicArray {
      *Problem Statement:
      * What is Monotonic -> An array is said to be monotonic if the elements in the array are strictly arranged either in ascending
      *                      or descending order.
-     * example: 1 araay = 1,2,2,3  This is monotonic array
-     *          2 araay = 6,5,4,4  This is monotonic array
-     *          3 araay = 1,3,2,4  This is not monotonic array
+     * example: 1 array = 1,2,2,3  This is monotonic array
+     *          2 array = 6,5,4,4  This is monotonic array
+     *          3 array = 1,3,2,4  This is not monotonic array
      */
 
 

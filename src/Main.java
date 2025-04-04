@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -11,6 +9,23 @@ public class Main {
             System.out.println(i +"\t-->\t"+ (char)i);
         }*/
         String s = "Anshu";
+        System.out.println(reverseNumber());
 
     }
+
+    public static String reverseNumber(){
+        System.out.println("Enter number to reverse");
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        String output = "";
+
+
+        for(int i = input.length()-1; i >= 0; i-- ){
+             output += input.charAt(i);
+        }
+
+        return output;
+    }
 }
+
+

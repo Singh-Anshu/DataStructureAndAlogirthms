@@ -27,6 +27,7 @@ public class PangramString {
                  if it will give -1 means character is not present in input String and return false
                  other when for loops is completed then return true */
 
+                System.out.print(input.indexOf(i)+" ");
                 if(input.indexOf(i) < 0){
                     System.out.println(input.charAt(i));
                     return false;
